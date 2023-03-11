@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+
+    <title>Schwarzmarkt</title>
+</head>
+
+<body class="d-flex h-100 text-center text-white bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+            <div>
+                <h3 class="float-md-start mb-0">Goblin Tinker Inc.</h3>
+                <nav class="nav nav-masthead justify-content-center float-md-end ">
+                    <a class="nav-link" href="#">Arsenal</a>
+                    <a class="nav-link" href="#">Kontakt</a>
+
+                    <!-- Modal trigger button -->
+                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#modalId">
+                        Impressum
+                    </button>
+
+
+                    <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static"
+                        data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+                            role="document">
+                            <div class="modal-content text-primary">
+                                <div class="modal-header">
+                                    <h5 class="modal-title text-white" id="modalTitleId">Goblin Tinker Inc.</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p class="text-white">Impressum Goblin Tinker Inc.
+                                        Flinkes Rind
+                                        Dönerstraße 17
+                                        01337 Donnerfels
+                                        Kalmindor</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <div class="container">
+            <img id="pictureMain" src="../Assets/Goblin_Main_Page.png" alt="Goblin_Main_Page" width=100% height="auto">
+            <h1>
+                Waffen Übersicht
+            </h1>
+
+            <table id="tableWeapons" class="table text-white ">
+                <thead>
+                    <tr>
+                        <th scope="col">Abbildung</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Attack Power</th>
+                        <th scope="col">Weight</th>
+                        <th scope="col">Cost</th>
+                        <th scope="col">Tier</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <!-- <th scope="row">
+                            <figure class="figure">
+                                <img src="../Assets/longsword-icon.png" class="figure-img img-fluid rounded">
+                                <figcaption class="figure-caption">Longsword</figcaption>
+                            </figure> 
+                        </th>
+                        -->
+                        <td><img src="../Assets/longsword-icon.png" class="figure-img img-fluid rounded"></td>
+
+                        <td>Longsword</td>
+                        <td>110</td>
+                        <td>3.0</td>
+                        <td>10000</td>
+                        <td>D</td>
+                    </tr>
+
+                    <tr>
+                        <!-- <th scope="row">
+                            <figure class="figure">
+                                <img src="../Assets/sunlight_straight_sword-icon.png"
+                                    class="figure-img img-fluid rounded">
+                                <figcaption class="figure-caption">Sunlight Straight Sword</figcaption>
+                            </figure> 
+                        </th>-->
+                        <td> <img src="../Assets/sunlight_straight_sword-icon.png" class="figure-img img-fluid rounded">
+                        </td>
+                        <td>Sunlight Straight Sword</td>
+                        <td>112</td>
+                        <td>3.0</td>
+                        <td>20000</td>
+                        <td>C</td>
+                    </tr>
+
+                    <tr>
+                        <!--  <th scope="row">
+                            <figure class="figure">
+                                <img src="../Assets/lucerne-icon.png" class="figure-img img-fluid rounded">
+                                <figcaption class="figure-caption">Lucerne</figcaption>
+                            </figure>
+                        </th>-->
+                        <td> <img src="../Assets/lucerne-icon.png" class="figure-img img-fluid rounded"></td>
+                        <td>Lucerne</td>
+                        <td>126</td>
+                        <td>7.5</td>
+                        <td>30000</td>
+                        <td>D</td>
+                    </tr>
+
+                    <tr>
+                        <!---  <th scope="row">
+                            <figure class="figure">
+                                <img src="../Assets/glaive-icon.png" class="figure-img img-fluid rounded">
+                                <figcaption class="figure-caption">Glaive</figcaption>
+                            </figure>
+                        </th>
+                        -->
+                        <td> <img src="../Assets/glaive-icon.png" class="figure-img img-fluid rounded"></td>
+                        <td>Glaive</td>
+                        <td>141</td>
+                        <td>11.0</td>
+                        <td>40000</td>
+                        <td>C</td>
+                    </tr>
+
+                    <tr>
+                        <!-- <th scope="row"> <figure class="figure">
+                            <img src="../Assets/greataxe-icon.png" class="figure-img img-fluid rounded">
+                            <figcaption class="figure-caption">Great Axe</figcaption>
+                        </figure>
+                        </th>-->
+                        <td> <img src="../Assets/greataxe-icon.png" class="figure-img img-fluid rounded"></td>
+                        <td>Great Axe</td>
+                        <td>188</td>
+                        <td>16.0</td>
+                        <td>50000</td>
+                        <td>D</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+
+        <div class="container">
+
+            <h1>
+                Waffe hinzufügen
+            </h1>
+
+            <form class="row g-3">
+                <div class="col-md-12">
+                    <label for="inputName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="inputName">
+                </div>
+
+                <div class="mb-3">
+                    <label for="" class="form-label">Choose file</label>
+                    <input type="file" class="form-control" name="" id="inputIcon" placeholder=""
+                        aria-describedby="fileHelpId">
+
+                </div>
+
+                <div class="col-12">
+                    <label for="inputAttackPower" class="form-label">Attack Power</label>
+                    <input type="number" class="form-control" id="inputAttackPower">
+                </div>
+
+                <div class="col-12">
+                    <label for="inputWeight" class="form-label">Weight</label>
+                    <input type="number" class="form-control" id="inputWeight">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputCost" class="form-label">Cost</label>
+                    <input type="number" class="form-control" id="inputCost">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputTier" class="form-label">Tier</label>
+                    <select id="inputTier" class="form-select">
+                        <option selected></option>
+                        <option>S</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                        <option>E</option>
+                        <option>F</option>
+                    </select>
+                </div>
+
+                <div class="col-md-12">
+                    <button id="addWaffe" type="button" class="btn btn-primary">submit</button>
+                </div>
+            </form>
+        </div>
+
+        <footer class="footer mt-auto py-3 bg-dark">
+            <div class="container">
+                <p>Gesponsert von der <a href="allianz.html" class="text-white">Allianz</a> und der <a href="horde.html"
+                        class="text-white">Horde</a> </p>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <script src="../JS/bootstrap.bundle.min.js"></script>
+    <script src="../JS/jquery.js"></script>
+    <script src="../JS/table.js"></script>
+    <script src="../JS/modal.js"></script>
+
+
+
+</body>
+
+</html>

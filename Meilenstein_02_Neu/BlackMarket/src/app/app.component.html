@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Black Market</title>
+</head>
+<header>
+
+  <div class="px-4 py-5 my-5 text-center">
+    <div class="col-lg-6 mx-auto">
+      <div class="container">
+        <nav class="nav nav-masthead ">
+          <a class="nav-link active" routerLink="/home"> Home</a>
+          <a class="nav-link active" routerLink="/weapons"> Weapons</a>
+          <a class="nav-link active" routerLink="/horde"> Horde</a>
+          <a class="nav-link active" routerLink="/alliance"> Alliance</a>
+        </nav>
+        <img src="./assets/Goblin.png" alt="Goblin_Main_Page" width="100%" height="auto">
+      </div>
+    </div>
+  </div>
+</header>
+<body>
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+</body>
+
+<footer>
+  <div class="container">
+    <div class="px-4 py-5 my-5 text-center">
+      <div class="col-lg-6 mx-auto">
+        <h1>About</h1>
+        <p>This is my pretty, pretty little footer</p>
+      </div>
+    </div>
+  </div>
+</footer>
+</html>

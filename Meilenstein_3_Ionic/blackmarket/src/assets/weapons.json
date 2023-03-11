@@ -1,0 +1,40 @@
+[{
+  "id": 0,
+  "name": "Longsword",
+  "damage": 13,
+  "weight": 3.0,
+  "price": 250,
+  "tier": "A"},
+  {
+    "id": 1,
+    "name": "Broadsword",
+    "damage": 17,
+    "weight": 3.8,
+    "price": 320,
+    "tier": "B"
+  },
+  {
+    "id": 2,
+    "name": "Lucerne",
+    "damage": 65,
+    "weight": 17.8,
+    "price": 1092,
+    "tier": "C"
+  },
+  {
+    "id": 3,
+    "name": "Greataxe",
+    "damage": 92,
+    "weight": 28.4,
+    "price": 2124,
+    "tier": "C"
+  },
+  {
+    "id": 4,
+    "name": "Glaive",
+    "damage": 75,
+    "weight": 20.9,
+    "price": 1857,
+    "tier": "C"
+  }
+]

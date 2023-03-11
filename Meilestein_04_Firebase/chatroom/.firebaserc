@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "chatfirebase-473e8": {
+      "hosting": {
+        "app": [
+          "chatfirebase-473e8"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "chatfirebase-473e8"
+  }
+}

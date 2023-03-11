@@ -1,0 +1,106 @@
+<body>
+  <div class="container">
+
+    <table class="waffen">
+      <thead>
+        <tr>
+          <th scope="col">Abbildung</th>
+          <th scope="col">Name</th>
+          <th scope="col">Attack Power</th>
+          <th scope="col">Weight</th>
+          <th scope="col">Cost</th>
+          <th scope="col">Tier</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let waffe of waffen">
+          <td><img src="{{waffe.iconUri}}"></td>
+          <td>{{waffe.name}}</td>
+          <td>{{waffe.schaden}}</td>
+          <td>{{waffe.gewicht}}</td>
+          <td>{{waffe.kosten}}</td>
+          <td>{{waffe.tier}}</td>
+          <td><button class="detailButton" [class.selected]="waffe === selectedWaffe" type="button"
+              (click)="onSelect(waffe)"> bearbeiten</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div *ngIf="selectedWaffe">
+    <div class="centerEdit">
+      <h2>{{selectedWaffe.name | uppercase}} Details bearbeiten</h2>
+      <div>
+        <label for="weapon-name">Waffenname: </label>
+        <input id="weapon-name" [(ngModel)]="selectedWaffe.name" placeholder="name">
+      </div>
+
+      <div>
+        <label for="weapon-attack-power">Attack Power: </label>
+        <input id="weapon-attack-power" [(ngModel)]="selectedWaffe.schaden" placeholder="AP">
+      </div>
+
+      <div>
+        <label for="weapon-gewicht">Gewicht: </label>
+        <input id="weapon-gewicht" [(ngModel)]="selectedWaffe.gewicht" placeholder="weight">
+      </div>
+
+      <div>
+        <label for="weapon-kosten">Kosten: </label>
+        <input id="weapon-kosten" [(ngModel)]="selectedWaffe.kosten" placeholder="cost">
+      </div>
+
+      <div>
+        <label for="weapon-tier">Tier: </label>
+        <input id="weapon-tier" [(ngModel)]="selectedWaffe.tier" placeholder="tier">
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="container">
+    <div>
+      <form (ngSubmit)="onSubmit()" #weaponForm="ngForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" required [(ngModel)]="waffe.name" name="name"
+            #name="ngModel">
+          <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+            Name is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="addPower">Attack Power</label>
+          <input type="number" class="form-control" id="addPower" [(ngModel)]="waffe.schaden" name="Attack Power">
+        </div>
+
+        <div class="form-group">
+          <label for="addWeight">Weight</label>
+          <input type="number" class="form-control" id="addWeight" [(ngModel)]="waffe.gewicht" name="Weight">
+        </div>
+
+        <div class="form-group">
+          <label for="addCosts">Cost</label>
+          <input type="number" class="form-control" id="addCosts" [(ngModel)]="waffe.kosten" name="Costs">
+        </div>
+
+        <div class="form-group">
+          <label for="addTier">Tier</label>
+          <input type="text" class="form-control" id="addTier" [(ngModel)]="waffe.tier" name="Tier">
+        </div>
+
+        <button type="button" class="btn btn-default" (click)="newWaffe(); weaponForm.reset()">Waffe hinzufuegen</button>
+      </form>
+    </div>
+
+  </div>
+
+
+
+
+</body>

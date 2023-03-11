@@ -1,0 +1,22 @@
+#waffenKammer{
+    width: 100%;
+    font-size: xx-large;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.carousel-inner{
+    
+    margin: auto;
+    width: 100px;
+ }
+
+ .carousel-inner img{
+    margin-bottom: 40%;
+ }
+
+#pictureMain{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+

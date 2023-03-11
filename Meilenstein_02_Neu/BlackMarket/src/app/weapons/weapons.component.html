@@ -1,0 +1,106 @@
+<div class="container mt-5">
+  <h2 class="text-center">Weapons for Sale</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Damage</th>
+      <th>Weight</th>
+      <th>Price</th>
+      <th>Tier</th>
+      <th>Edit</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- <tr *ngFor="let weapon of weaponList"> -->
+     <tr *ngFor="let weapon of posts">
+      <td>{{ weapon.name }}</td>
+      <td>{{ weapon.damage }}</td>
+      <td>{{ weapon.weight }}</td>
+      <td>{{ weapon.price }}</td>
+      <td>{{ weapon.tier }}</td>
+      <td>
+        <button class="bg-primary" [class.selected]="weapon === selectedWeapon" type="button" (click)="toggleEditMenu(); onSelect(weapon)"> edit</button>
+        <button class="bg-danger" [class.selected]="weapon === selectedWeapon" type="button" (click)="deleteEntry(weapon)"> delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <button class="bg-dark text-white" (click)="toggleAddMenu()">Add item</button>
+  <button class="bg-danger text-white" (click)="resetTable()">Reset Table</button>
+  <button class="bg-info text-white" (click)="clearLocalStorage()">Clear Local Storage</button>
+</div>
+
+<div *ngIf="addToggle">
+  <div class="container mt-5">
+    <h2 class="text-danger">Add Weapon</h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Name:</th>
+        <th>Attack Power:</th>
+        <th>Weight:</th>
+        <th>Price:</th>
+        <th>Tier:</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <input [(ngModel)]="model.name" placeholder="Name">
+        </td>
+        <td>
+          <input [(ngModel)]="model.damage" placeholder="Damage">
+        </td>
+        <td>
+          <input [(ngModel)]="model.weight" placeholder="Weight">
+        </td>
+        <td>
+          <input [(ngModel)]="model.price" placeholder="Price">
+        </td>
+        <td>
+          <input [(ngModel)]="model.tier" placeholder="Tier">
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <button class="bg-dark text-white" (click)="addWeapon(model); clearAddedWeapon()">Add this item to the list</button>
+  </div>
+</div>
+
+
+<div *ngIf="selectedWeapon && editToggle">
+  <div class="container mt-5">
+    <h2 class="text-danger">{{selectedWeapon.name | uppercase}}</h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Name:</th>
+        <th>Attack Power:</th>
+        <th>Weight:</th>
+        <th>Price:</th>
+        <th>Tier:</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <input [(ngModel)]="selectedWeapon.name" placeholder="Name">
+        </td>
+        <td>
+          <input [(ngModel)]="selectedWeapon.damage" placeholder="Damage">
+        </td>
+        <td>
+          <input [(ngModel)]="selectedWeapon.weight" placeholder="Weight">
+        </td>
+        <td>
+          <input [(ngModel)]="selectedWeapon.price" placeholder="Price">
+        </td>
+        <td>
+          <input [(ngModel)]="selectedWeapon.tier" placeholder="Tier">
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

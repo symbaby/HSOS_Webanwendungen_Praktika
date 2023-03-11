@@ -1,0 +1,7 @@
+{
+  "name": "Blackmarket",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

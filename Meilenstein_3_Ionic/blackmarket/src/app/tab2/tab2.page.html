@@ -1,0 +1,163 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Data
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  <ion-card>
+    <ion-card-header>
+      <h2>Our selection of weapons</h2>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-list id="weaponTable">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>DMG</th>
+        <th>lbs</th>
+        <th>Price</th>
+        <th>Tier</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- <tr *ngFor="let weapon of weaponList"> -->
+      <tr *ngFor="let weapon of this.httpService.posts">
+        <td>{{ weapon.name }}</td>
+        <td>{{ weapon.damage }}</td>
+        <td>{{ weapon.weight }}</td>
+        <td>{{ weapon.price }}</td>
+        <td>{{ weapon.tier }}</td>
+        <td>
+          <ion-button id="editButton" class="bg-primary" [class.selected]="weapon === this.editService.selectedWeapon"
+                  type="button" (click)="this.editService.toggleEditMenu(); this.editService.onSelect(weapon)" expand="block" (click)="setOpenEdit(true)" color="warning"> edit
+          </ion-button>
+        </td>
+        <td>
+          <ion-button id="deleteButton" class="bg-danger" [class.selected]="weapon === this.editService.selectedWeapon"
+                  type="button" (click)="deleteEntry(weapon)"  color="danger"> delete
+          </ion-button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <!--<button id="addButton" class="bg-dark text-white" (click)="this.addService.toggleAddMenu()">Add item</button>
+    <button id="resetButton" class="bg-danger text-white" (click)="resetTable()">Reset Table</button> -->
+
+  </ion-list>
+
+  <ion-content class="ion-padding">
+    <ion-button expand="block" (click)="setOpenAdd(true)">Add new Weapon</ion-button>
+    <ion-modal [isOpen]="isModalOpenAdd">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Add Weapon Menu</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="setOpenAdd(false)">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <ion-list id="addTable">
+            <div class="container mt-5">
+              <h2 class="text-danger ion-text-center">Add Weapon</h2>
+              <table class="table">
+                <tbody>
+                <tr>
+                  <td>Name:</td>
+                  <input [(ngModel)]="this.addService.model.name" placeholder="Name">
+                </tr>
+                <tr>
+                  <td>Attack Power:</td>
+                  <input [(ngModel)]="this.addService.model.damage" placeholder="DMG">
+                </tr>
+                <tr>
+                  <td>Weight:</td>
+                  <input [(ngModel)]="this.addService.model.weight" placeholder="Lbs">
+                </tr>
+                <tr>
+                  <td>Price:</td>
+                  <input [(ngModel)]="this.addService.model.price" placeholder="Price">
+                </tr>
+                <tr>
+                  <td>Tier:</td>
+                  <input [(ngModel)]="this.addService.model.tier" placeholder="Tier">
+                </tr>
+                </tbody>
+              </table>
+              <button id="finalAddButton" class="bg-dark text-white"
+                      (click)="addWeapon(this.addService.model); this.setOpenAdd(false)" >Add this item to the list
+              </button>
+            </div>
+          </ion-list>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-content>
+
+
+  <ion-content class="ion-padding">
+    <ion-modal [isOpen]="isModalOpenEdit">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Edit Weapon Menu</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="setOpenEdit(false)">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <div *ngIf="this.editService.selectedWeapon">
+            <ion-list id="editTable">
+              <div class="container mt-5">
+                <h2 class="text-danger">{{this.editService.selectedWeapon.name | uppercase}}</h2>
+                <table class="table">
+                  <tbody>
+                  <tr>
+                    <td>Name:</td>
+                    <td><input [(ngModel)]="this.editService.selectedWeapon.name" placeholder="Name"></td>
+                  </tr>
+                  <tr>
+                    <td>DMG:</td>
+                    <td><input [(ngModel)]="this.editService.selectedWeapon.damage" placeholder="Damage"></td>
+                  </tr>
+                  <tr>
+                    <td>lbs:</td>
+                    <td><input [(ngModel)]="this.editService.selectedWeapon.weight" placeholder="Weight"></td>
+                  </tr>
+                  <tr>
+                    <td>Price:</td>
+                    <td><input [(ngModel)]="this.editService.selectedWeapon.price" placeholder="Price"></td>
+                  </tr>
+                  <tr>
+                    <td>Tier:</td>
+                    <td><input [(ngModel)]="this.editService.selectedWeapon.tier" placeholder="Tier"></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </ion-list>
+          </div>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </ion-content>
+</ion-content>
+
+
+
+
+
+
+
+
+
